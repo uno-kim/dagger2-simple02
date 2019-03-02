@@ -8,18 +8,16 @@ class CafeInfo {
         private const val TAG = "CafeInfo"
     }
 
-    private lateinit var name: String
-
-    init {
-        Logger.d(TAG, "CafeInfo() created")
-    }
+    private val name: String?
 
     constructor() {
-
+        this.name = null
+        Logger.d(TAG, "CafeInfo() created")
     }
 
     constructor(name: String) {
         this.name = name
+        Logger.d(TAG, "CafeInfo($name) created")
     }
 
     fun welcome() {

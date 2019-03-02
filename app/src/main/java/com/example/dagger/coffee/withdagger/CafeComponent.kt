@@ -11,4 +11,10 @@ interface CafeComponent {
     fun cafeInfo(): CafeInfo
 
     fun coffeeComponent(): CoffeeComponent.Builder
+
+    @Component.Builder
+    interface Builder {
+        fun cafeModule(cafeModule: CafeModule): Builder
+        fun build(): CafeComponent
+    }
 }

@@ -10,6 +10,10 @@ class Heater {
 
     private var heating = false
 
+    init {
+        Logger.d(TAG, "Heater() created")
+    }
+
     fun isHeating(): Boolean = heating
 
     fun setHeating(heating: Boolean) {

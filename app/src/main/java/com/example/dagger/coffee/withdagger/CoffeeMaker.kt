@@ -3,10 +3,22 @@ package com.example.dagger.coffee.withdagger
 import com.example.dagger.logger.Logger
 import javax.inject.Inject
 
-class CoffeeMaker @Inject constructor(val heater: Heater) {
+class CoffeeMaker {
 
     companion object {
         private const val TAG = "CoffeeMaker"
+    }
+
+    private lateinit var heater: Heater
+
+    constructor() {
+        Logger.d(TAG, "CoffeeMaker() created")
+    }
+
+    @Inject
+    constructor(heater: Heater) {
+        this.heater = heater
+        Logger.d(TAG, "CoffeeMaker($heater) created")
     }
 
     fun brew(coffeeBean: CoffeeBean) {
